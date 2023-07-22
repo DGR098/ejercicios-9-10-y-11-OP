@@ -1,0 +1,20 @@
+class EnchufableIteratorImpl implements EnchufableIterator {
+    private Enchufable[] enchufables;
+    private int position = 0;
+
+    public EnchufableIteratorImpl(Enchufable[] enchufables) {
+        this.enchufables = enchufables;
+    }
+
+    @Override
+    public boolean hasNext() {
+        return position < enchufables.length;
+    }
+
+    @Override
+    public Enchufable next() {
+        Enchufable enchufable = enchufables[position];
+        position++;
+        return enchufable;
+    }
+}
