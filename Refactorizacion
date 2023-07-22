@@ -1,0 +1,49 @@
+package sesion7.Singleton.Refact;
+
+public class MySingleton {
+    private static MySingleton instancia;
+    private int contador = 0;
+
+    private MySingleton() { }
+
+    public static synchronized MySingleton getInstance() {
+        if (instancia == null) {
+            instancia = new MySingleton();
+        }
+
+        return instancia;
+    }
+
+    public void setContador(int contador) {
+        this.contador = contador;
+    }
+
+    public int getContador() {
+        return contador;
+    }
+}
+
+
+package sesion7.Singleton.Refact;
+
+public class Main {
+    public static void main(String []args) {
+        MySingleton misingleton = sesion7.Singleton.Refact.MySingleton.getInstance();
+        misingleton.setContador(15);
+
+        MySingleton miSingleton2 = sesion7.Singleton.Refact.MySingleton.getInstance();
+        System.out.println("El contador es: " + miSingleton2.getContador());
+    }
+}
+
+//Cambios realizados:
+
+//Cambie el nombre de la clase de Singleton a MySingleton para seguir las convenciones de nombres de Java, 
+//que sugieren utilizar un prefijo para los nombres de las clases que evita conflictos de nombres con clases del JDK u otras bibliotecas.
+
+//Añadi el modificador synchronized al método getInstance(), lo que garantiza que el acceso a la instancia única del Singleton
+//sea seguro para subprocesos en un entorno multi-hilo. Sin este modificador, múltiples hilos podrían acceder simultáneamente al método getInstance() 
+//y crear instancias múltiples de MySingleton.
+
+//La inicialización perezosa se mantiene, lo que significa que la instancia única del Singleton se crea solo cuando se llama al método getInstance() por primera vez. 
+//Esto puede ser beneficioso en términos de eficiencia, ya que la instancia no se crea hasta que sea realmente necesaria.
