@@ -1,0 +1,24 @@
+public class Explicacion {
+
+    //Implementar el patrón Iterador en este código proporciona una manera más flexible y desacoplada de recorrer
+    //y manipular una colección de objetos Enchufable sin tener que preocuparse por la estructura interna
+    //de la colección. El patrón Iterador se utiliza para abstraer la lógica de recorrido de los objetos y
+    //encapsularla en una clase de iterador, lo que permite acceder a los elementos de la colección de manera
+    //uniforme sin importar si la colección es un array, una lista enlazada u otra estructura de datos.
+    //
+    //En este caso, las clases Horno, Lampara y AdaptadorIngles implementan la interfaz Enchufable, que define
+    //operaciones básicas como enciende(), apaga() y tieneCorriente(). Con el patrón Iterador, se agrega el
+    //método createIterator() a cada una de estas clases, el cual devuelve un objeto de tipo EnchufableIterator.
+    //
+    //El patrón Iterador se utiliza en el método main para recorrer y manipular una lista de objetos Enchufable
+    //sin importar su tipo específico. Esto significa que si en el futuro se agregan más clases que implementen
+    //la interfaz Enchufable, no será necesario modificar el código del método main para recorrer la nueva colección.
+    //Simplemente se agregará la nueva clase a la lista de objetos Enchufable, y el código existente seguirá
+    //funcionando correctamente sin cambios.
+    //
+    //La implementación del patrón Iterador también mejora la legibilidad y la mantenibilidad del código,
+    //ya que abstrae la lógica de recorrido en una clase dedicada (EnchufableIteratorImpl). Esto hace que
+    //el código en el método main sea más limpio y fácil de entender, ya que no es necesario incluir la
+    //lógica de recorrido dentro del bucle, sino que se delega esa responsabilidad al iterador.
+    //
+}
