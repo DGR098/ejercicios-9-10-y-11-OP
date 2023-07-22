@@ -1,0 +1,4 @@
+interface EnchufableIterator {
+    boolean hasNext();
+    Enchufable next();
+}
