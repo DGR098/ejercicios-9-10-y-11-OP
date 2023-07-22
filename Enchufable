@@ -1,0 +1,6 @@
+interface Enchufable {
+    void enciende();
+    void apaga();
+    boolean tieneCorriente();
+    EnchufableIterator createIterator();
+}
